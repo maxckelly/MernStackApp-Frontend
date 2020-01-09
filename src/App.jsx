@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+require('dotenv').config();
 
 class App extends React.Component {
 
@@ -9,7 +10,7 @@ class App extends React.Component {
 
   async componentDidMount() {
     // 1. Make a get request to API http://localhost:5000/lasagne (fetch)
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/lasagne`)
+    const response = await fetch(process.env.REACT_APP_BACKEND_URL)
     // 2. Put the result from the API into a state
     const data = await response.json();
     this.setState({
