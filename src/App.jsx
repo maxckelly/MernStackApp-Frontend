@@ -10,12 +10,12 @@ class App extends React.Component {
 
   async componentDidMount() {
     // 1. Make a get request to API http://localhost:5000/lasagne (fetch)
-    const response = await fetch(process.env.REACT_APP_BACKEND_URL)
+    const response = await fetch(process.env.REACT_APP_BACKEND_URL + '/lasagne')
     // 2. Put the result from the API into a state
     const data = await response.json();
     this.setState({
       data: data
-    })
+    });
     // 3. This will make render run again and the DOM can be updated.
   }
   render () {
